@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+    display: grid;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#timeString{
+    font-family: emoji;
+    rotate: -90deg;
+    align-self: center;
+    font-size: xxx-large;
+    padding: 0;
+    width: max-content;
+    height: max-content;
+    margin: 0;
+    color: white;
+    position: absolute;
+    top: 50%;
+}
