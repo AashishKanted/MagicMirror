@@ -1,6 +1,12 @@
 body{
     background-color: black;
-    display: grid;
+    /* display: grid; */
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 html{
@@ -11,7 +17,7 @@ html{
 }
 
 #timeString{
-    font-family: emoji;
+    font-family: 'Roboto';
     rotate: -90deg;
     align-self: center;
     font-size: xxx-large;
@@ -22,4 +28,19 @@ html{
     color: white;
     position: absolute;
     top: 50%;
+}
+
+#weather{
+    rotate: -90deg;
+    width: 200px;
+    position: absolute;
+    margin-left: 20%;
+    top: 0px;
+    /* height: 400px; */
+    margin-top: 0;
+    bottom: 70%;
+}
+
+a {
+    pointer-events: none;
 }
