@@ -1,8 +1,19 @@
 body{
     background-color: black;
-    /* display: grid; */
+    display: grid;
     margin: 0;
     padding: 0;
+    grid-template-areas: 
+    'timeString weather weather compliment'
+    'timeString face face compliment'
+    'timeString face face compliment'
+    'timeString todo reminders compliment'
+    ;
+    grid-template-columns: 20% 30% 30% 20%;
+    grid-template-rows: 25% 25% 25% 25%;
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto';
 }
 
 * {
@@ -16,31 +27,94 @@ html{
     overflow-y: hidden;
 }
 
+#face{
+    grid-area: face;
+    background-color: black;
+    color: black;
+    rotate: -90deg;
+    height: 60vw;
+    position: relative;
+    margin: 0%;
+    width: 50vh;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    padding: 5%;
+}
+
+#compliment{
+    grid-area: compliment;
+    rotate: -90deg;
+    height: 20vw;
+    position: relative;
+    margin: 0%;
+    width: 75vh;
+    align-self: center;
+    justify-self: center;
+    text-wrap-style: balance;
+    text-align: center;
+    color: white;
+    padding-top: 50%;
+}
+
 #timeString{
-    font-family: 'Roboto';
+    grid-area: timeString;
     rotate: -90deg;
     align-self: center;
     font-size: xxx-large;
-    padding: 0;
-    width: max-content;
-    height: max-content;
-    margin: 0;
     color: white;
-    position: absolute;
-    top: 50%;
+    position: relative;
+    width: max-content;
+    justify-self: center;
 }
 
 #weather{
+    grid-area: weather;
     rotate: -90deg;
-    width: 200px;
-    position: absolute;
-    margin-left: 20%;
-    top: 0px;
-    /* height: 400px; */
-    margin-top: 0;
-    bottom: 70%;
+    width: 25vh;
+    position: relative;
 }
 
 a {
     pointer-events: none;
+}
+
+#todo{
+    grid-area: todo;
+    rotate: -90deg;
+    height: 30vw;
+    position: relative;
+    margin: 0%;
+    width: 25vh;
+    align-self: center;
+    justify-self: center;
+}
+
+th{
+    height: 2vw;
+    width: 25vh;
+    margin: auto;
+    font-weight: bold;
+    color: white;
+    border-color: white;
+    border-width: 1px;
+}
+
+hr{
+    background-color: white;
+    color: white;
+    width: 25vh;
+
+}
+
+#reminders{
+    grid-area: reminders;
+    rotate: -90deg;
+    height: 30vw;
+    position: relative;
+    margin: 0%;
+    width: 25vh;
+    align-self: center;
+    justify-self: center;
+    color: white;
 }
