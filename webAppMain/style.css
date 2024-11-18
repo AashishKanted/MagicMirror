@@ -88,6 +88,7 @@ a {
     width: 25vh;
     align-self: center;
     justify-self: center;
+    color: white;
 }
 
 th{
@@ -98,6 +99,7 @@ th{
     color: white;
     border-color: white;
     border-width: 1px;
+    border-bottom: solid;
 }
 
 hr{
@@ -117,4 +119,24 @@ hr{
     align-self: center;
     justify-self: center;
     color: white;
+}
+
+table{
+    table-layout: fixed;
+}
+
+li{
+    margin-left: 1vh;
+    width: 25vh;
+    margin-top: 0.5vw;
+}
+
+.bullet{
+    list-style-type: disclosure-closed;
+}
+
+.nobullet{
+    list-style-type: none;
+    margin-left: 5vh;
+    margin-bottom: 0.5vw;
 }
