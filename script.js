@@ -25,7 +25,7 @@ function appendData(){
                                                     <li class="nobullet">@ ${data.reminders[i][1]}</li>`;
         }
         var todo = document.getElementById("tod");
-        for(let i=0; i<data.todo.length && i<10; i++){
+        for(let i=0; i<data.todo.length && i<5; i++){
             todo.insertRow(i).insertCell(0).innerHTML=`<li class="bullet">${data.todo[i]}</li>`;
         }
     })

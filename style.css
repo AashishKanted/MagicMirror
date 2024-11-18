@@ -4,13 +4,14 @@ body{
     margin: 0;
     padding: 0;
     grid-template-areas: 
-    'timeString weather weather compliment'
-    'timeString face face compliment'
-    'timeString face face compliment'
-    'timeString todo reminders compliment'
+
+    'timeString timeString timeString timeString'
+    'todo face face weather'
+    'reminders face face weather'
+    'compliment compliment compliment compliment'
     ;
     grid-template-columns: 20% 30% 30% 20%;
-    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-rows: 20% 30% 30% 20%;
     height: 100%;
     width: 100%;
     font-family: 'Roboto';
@@ -31,11 +32,11 @@ html{
     grid-area: face;
     background-color: black;
     color: black;
-    rotate: -90deg;
-    height: 60vw;
+    /* rotate: -90deg; */
+    height: 60vh;
     position: relative;
     margin: 0%;
-    width: 50vh;
+    width: 60vw;
     align-self: center;
     justify-self: center;
     text-align: center;
@@ -44,11 +45,11 @@ html{
 
 #compliment{
     grid-area: compliment;
-    rotate: -90deg;
-    height: 20vw;
+    /* rotate: -90deg; */
+    height: 20vh;
     position: relative;
     margin: 0%;
-    width: 75vh;
+    width: 75vw;
     align-self: center;
     justify-self: center;
     text-wrap-style: balance;
@@ -59,7 +60,7 @@ html{
 
 #timeString{
     grid-area: timeString;
-    rotate: -90deg;
+    /* rotate: -90deg; */
     align-self: center;
     font-size: xxx-large;
     color: white;
@@ -70,8 +71,8 @@ html{
 
 #weather{
     grid-area: weather;
-    rotate: -90deg;
-    width: 25vh;
+    /* rotate: -90deg; */
+    width: 20vw;
     position: relative;
 }
 
@@ -81,19 +82,19 @@ a {
 
 #todo{
     grid-area: todo;
-    rotate: -90deg;
-    height: 30vw;
+    /* rotate: -90deg; */
+    height: 30vh;
     position: relative;
     margin: 0%;
-    width: 25vh;
+    width: 20vw;
     align-self: center;
     justify-self: center;
     color: white;
 }
 
 th{
-    height: 2vw;
-    width: 25vh;
+    height: 2vh;
+    width: 20vw;
     margin: auto;
     font-weight: bold;
     color: white;
@@ -105,17 +106,17 @@ th{
 hr{
     background-color: white;
     color: white;
-    width: 25vh;
+    width: 20vw;
 
 }
 
 #reminders{
     grid-area: reminders;
-    rotate: -90deg;
-    height: 30vw;
+    /* rotate: -90deg; */
+    height: 30vh;
     position: relative;
     margin: 0%;
-    width: 25vh;
+    width: 20vw;
     align-self: center;
     justify-self: center;
     color: white;
@@ -123,12 +124,15 @@ hr{
 
 table{
     table-layout: fixed;
+    width: 20vw;
 }
 
 li{
-    margin-left: 1vh;
-    width: 25vh;
-    margin-top: 0.5vw;
+    margin-left: 1vw;
+    margin-top: 0.5vh;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .bullet{
@@ -137,6 +141,6 @@ li{
 
 .nobullet{
     list-style-type: none;
-    margin-left: 5vh;
-    margin-bottom: 0.5vw;
+    margin-left: 5vw;
+    margin-bottom: 0.5vh;
 }
