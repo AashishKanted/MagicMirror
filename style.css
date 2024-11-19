@@ -63,7 +63,7 @@ html{
     grid-area: timeString;
     /* rotate: -90deg; */
     align-self: center;
-    font-size: xxx-large;
+    font-size: 5vh;
     color: white;
     position: relative;
     width: max-content;
