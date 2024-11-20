@@ -27,6 +27,8 @@ html{
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
+    transition: 0.5s;
+
 }
 
 #face{
@@ -57,6 +59,8 @@ html{
     text-wrap-style: balance;
     text-align: center;
     color: white;
+    transition: 0.5s;
+
 }
 
 #timeString{
@@ -75,6 +79,7 @@ html{
     /* rotate: -90deg; */
     width: 20vw;
     position: relative;
+    transition: 0.5s;
 }
 
 a {
@@ -91,6 +96,8 @@ a {
     align-self: center;
     justify-self: center;
     color: white;
+    transition: 0.5s;
+
 }
 
 th{
@@ -121,6 +128,8 @@ hr{
     align-self: center;
     justify-self: center;
     color: white;
+    transition: 0.5s;
+
 }
 
 table{

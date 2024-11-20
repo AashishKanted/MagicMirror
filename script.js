@@ -57,3 +57,17 @@ function updateTime() {
     document.getElementById("timeString").innerHTML= time
     setTimeout(updateTime,1000);
 }
+
+function hideAll() {
+    document.getElementById("weather").style.right="-20vw";
+    document.getElementById("todo").style.left="-20vw";
+    document.getElementById("reminders").style.left="-20vw";
+    document.getElementById("compliment").style.bottom="-20vw";
+}
+
+function showAll(){
+  document.getElementById("weather").style.right="0";
+  document.getElementById("todo").style.left="0";
+  document.getElementById("reminders").style.left="0"; 
+  document.getElementById("compliment").style.bottom="0";
+}
