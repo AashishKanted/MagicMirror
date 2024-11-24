@@ -5,6 +5,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <script src="script.js"></script>
     <link rel="icon" type="image" href="mirror.png">
+    <script src="https://requirejs.org/docs/release/2.3.7/comments/require.js"></script>
 </head>
 <body>
     <div id="timeString"></div>
@@ -18,19 +19,21 @@
         <table>
             <th>T O  D O</th>
         </table>
-        <hr>
+        <table id="tod"></table>
+        <!-- <hr> -->
     </div>
     <div id="reminders">
         <table>
             <th>R E M I N D E R S</th>
         </table>
-        <hr>
+        <table id="rem"></table>
+        <!-- <hr> -->
     </div>
-    <div id="face">
+    <div id="face" onmouseover="hideAll()" onmouseleave="showAll()">
         The mirror shows the most desperate desire of a person's heart, a vision that has been known to drive men mad.
     </div>
     <div id="compliment">
-        * Insert F L I R T S *
+        * Insert more F L I R T S *
     </div>
 
 </body>

@@ -4,16 +4,18 @@ body{
     margin: 0;
     padding: 0;
     grid-template-areas: 
-    'timeString weather weather compliment'
-    'timeString face face compliment'
-    'timeString face face compliment'
-    'timeString todo reminders compliment'
+
+    'timeString timeString timeString timeString'
+    'todo face face weather'
+    'reminders face face weather'
+    'compliment compliment compliment compliment'
     ;
     grid-template-columns: 20% 30% 30% 20%;
-    grid-template-rows: 25% 25% 25% 25%;
-    height: 100%;
-    width: 100%;
+    grid-template-rows: 20% 30% 30% 20%;
+    height: 100vh;
+    width: 100vw;
     font-family: 'Roboto';
+    justify-content: center;
 }
 
 * {
@@ -25,17 +27,19 @@ html{
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
+    transition: 0.5s;
+
 }
 
 #face{
     grid-area: face;
     background-color: black;
     color: black;
-    rotate: -90deg;
-    height: 60vw;
+    /* rotate: -90deg; */
+    height: 60vh;
     position: relative;
     margin: 0%;
-    width: 50vh;
+    width: 60vw;
     align-self: center;
     justify-self: center;
     text-align: center;
@@ -44,24 +48,26 @@ html{
 
 #compliment{
     grid-area: compliment;
-    rotate: -90deg;
-    height: 20vw;
-    position: relative;
+    /* rotate: -90deg; */
+    height: 10vh;
+    position: fixed;
+    bottom: 0%;
     margin: 0%;
-    width: 75vh;
+    width: 100vw; 
     align-self: center;
     justify-self: center;
     text-wrap-style: balance;
     text-align: center;
     color: white;
-    padding-top: 50%;
+    transition: 0.5s;
+
 }
 
 #timeString{
     grid-area: timeString;
-    rotate: -90deg;
+    /* rotate: -90deg; */
     align-self: center;
-    font-size: xxx-large;
+    font-size: 5vh;
     color: white;
     position: relative;
     width: max-content;
@@ -70,9 +76,10 @@ html{
 
 #weather{
     grid-area: weather;
-    rotate: -90deg;
-    width: 25vh;
+    /* rotate: -90deg; */
+    width: 20vw;
     position: relative;
+    transition: 0.5s;
 }
 
 a {
@@ -81,40 +88,69 @@ a {
 
 #todo{
     grid-area: todo;
-    rotate: -90deg;
-    height: 30vw;
+    /* rotate: -90deg; */
+    height: 30vh;
     position: relative;
     margin: 0%;
-    width: 25vh;
+    width: 20vw;
     align-self: center;
     justify-self: center;
+    color: white;
+    transition: 0.5s;
+
 }
 
 th{
-    height: 2vw;
-    width: 25vh;
+    height: 2vh;
+    width: 20vw;
     margin: auto;
     font-weight: bold;
     color: white;
     border-color: white;
     border-width: 1px;
+    border-bottom: solid;
 }
 
 hr{
     background-color: white;
     color: white;
-    width: 25vh;
+    width: 20vw;
 
 }
 
 #reminders{
     grid-area: reminders;
-    rotate: -90deg;
-    height: 30vw;
+    /* rotate: -90deg; */
+    height: 30vh;
     position: relative;
     margin: 0%;
-    width: 25vh;
+    width: 20vw;
     align-self: center;
     justify-self: center;
     color: white;
+    transition: 0.5s;
+
+}
+
+table{
+    table-layout: fixed;
+    width: 20vw;
+}
+
+li{
+    margin-left: 1vw;
+    margin-top: 0.5vh;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.bullet{
+    list-style-type: disclosure-closed;
+}
+
+.nobullet{
+    list-style-type: none;
+    margin-left: 5vw;
+    margin-bottom: 0.5vh;
 }
