@@ -12,6 +12,7 @@ import math
 import numpy as np
 
 
+
 # Placeholder for your Google Sheets API key, Sheet ID, OpenWeatherMap API key and Spotify key
 SHEET_ID = '12RAcvir3adNOZikeLpR35oprVppqx9aKzujgmbxBCHo'
 API_KEY = 'AIzaSyCg1F3hUA8cri7HHtvLiOwsfCxvbp4czfQ'
@@ -153,12 +154,25 @@ def execute_command(command):
         hide_all()
     elif "show widgets" in command:
         show_all()
+    elif "cheese" in command:
+        capture()
     elif "thank you" in command:
         show_animation("Have a good day! \n Exiting.")
         listen_for_wake_word()
     else:
         print("Command not recognized.")
         listen_for_command_once()
+
+def capture():
+    cam = cv2.VideoCapture(0)
+    res,frame = cam.read()
+    if res:
+        cv2.imwrite("img.png", frame)
+        cv2.imshow("Thats you!", frame)
+    else:
+        print("Failed to capture frame.")
+    cam.release()
+        
 
 # Spotify control functions
 def play_spotify_music():
