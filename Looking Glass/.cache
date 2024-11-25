@@ -1,1 +1,5 @@
+<<<<<<< Updated upstream
 {"access_token": "BQAzVlLwqmbZgy7zZwqmOe5GE72VofFHKlHqT64Em6cki0ClefT6v4DmjuX5VNnZ6i91zSEUqPgekkaCZm5uI5dEbbnMdnqkdK_Ry8a8Lo4PSzsxpxbVMwJv84Dk3e9l-dbDtPGTTpj7q4-_slT1p9fZ93TF22fI2OHKYaXuArFkwJVw6ow97ZkJRS3a6oxskHp6N2XsYzAHHO_ezPEixDI", "token_type": "Bearer", "expires_in": 3600, "refresh_token": "AQD_AIAvL1kT_ct4gFVh7OedWs-s0zUedzoNsbMnfYc6iBrNvJebIpmzp1Wa06CzRQpdyTdAk5RF8tbzIKraa5R0LE86vUDcQPu5CyMa5-Q_e1i52hdJYBll579HN0gaVsw", "scope": "user-modify-playback-state user-read-playback-state", "expires_at": 1732426169}
+=======
+{"access_token": "BQD7y1YSE4lVQkpBdBHJPbsuFO7Pfw7JOyh1h0vg6LRGh1UXeAiGZ4EX6V4Rhwe2KzkbJeAC_ep6kW8wPO1-zsCkoWj6xwzgbcP_EUAalW8IQhTwX3P3DQ3j5Ezna91RQeMFeq1N4jM_2q8xCqK_o9HGxoPrXlxlBmpeWqLzkjmLP7tYUqKdor4hBcHEACKw-p9uc4wdfyoyjlYUoWUMABg", "token_type": "Bearer", "expires_in": 3600, "refresh_token": "AQDCFI41KUz23UDORZiqrvBMTHooO95WgMJhrXBtsU3jRuJyUXGDDhZmMutOoAVraOYRYL3PKO0qZKuq4C72m5xBNPrdwED1rlXUpwplIvurQRgGq2YbAJ_9j0_9oFnN1bU", "scope": "user-modify-playback-state user-read-playback-state", "expires_at": 1732387703}
+>>>>>>> Stashed changes
