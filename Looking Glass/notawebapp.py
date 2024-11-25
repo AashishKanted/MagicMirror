@@ -11,7 +11,8 @@ import cv2
 import math
 import numpy as np
 
-
+frame = ""
+res = ""
 
 # Placeholder for your Google Sheets API key, Sheet ID, OpenWeatherMap API key and Spotify key
 SHEET_ID = '12RAcvir3adNOZikeLpR35oprVppqx9aKzujgmbxBCHo'
@@ -164,14 +165,8 @@ def execute_command(command):
         listen_for_command_once()
 
 def capture():
-    cam = cv2.VideoCapture(0)
-    res,frame = cam.read()
-    if res:
-        cv2.imwrite("img.png", frame)
-        cv2.imshow("Thats you!", frame)
-    else:
-        print("Failed to capture frame.")
-    cam.release()
+    cv2.imwrite("img.png", frame)
+    show_animation("Image sent to your device!")
         
 
 # Spotify control functions
@@ -236,6 +231,9 @@ def motion_detection():
     compliment_update_time = time.time()  # Track the time when the compliment was last updated
     compliment_duration = 30  # Compliment stays constant for 30 seconds
     current_compliment = ""
+
+    global frame
+    global res
 
     while True:
         ret, frame = cap.read()
