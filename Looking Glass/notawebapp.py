@@ -11,10 +11,22 @@ import cv2
 import math
 import numpy as np
 
+frame = ""
+res = ""
 
 # Placeholder for your Google Sheets API key, Sheet ID, OpenWeatherMap API key and Spotify key
+SHEET_ID = '12RAcvir3adNOZikeLpR35oprVppqx9aKzujgmbxBCHo'
+API_KEY = 'AIzaSyCg1F3hUA8cri7HHtvLiOwsfCxvbp4czfQ'
+RANGE = 'Sheet2'
+
+WEATHER_API_KEY = "89c783ca6ca15a47906557128fbce8ec"
+CITY = "Goa"
 
 
+SPOTIPY_CLIENT_ID = '4b4d7267b1bf47adae77bf7c4debd80a'
+SPOTIPY_CLIENT_SECRET = '199b93b8982f435b9e6d962255000088'
+SPOTIPY_REDIRECT_URI = 'http://localhost:8888/callback'
+SCOPE = 'user-read-playback-state,user-modify-playback-state'
 # Initialize Spotify API
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID,
                                                client_secret=SPOTIPY_CLIENT_SECRET,
@@ -126,6 +138,7 @@ def listen_for_command_once():
             execute_command(command_text)
         except sr.UnknownValueError:
             print("Could not understand the command.")
+            listen_for_command_once()
         except sr.RequestError as e:
             print(f"Error with the recognition service: {e}")
 
@@ -142,8 +155,19 @@ def execute_command(command):
         hide_all()
     elif "show widgets" in command:
         show_all()
+    elif "cheese" in command:
+        capture()
+    elif "thank you" in command:
+        show_animation("Have a good day! \n Exiting.")
+        listen_for_wake_word()
     else:
         print("Command not recognized.")
+        listen_for_command_once()
+
+def capture():
+    cv2.imwrite("img.png", frame)
+    show_animation("Image sent to your device!")
+        
 
 # Spotify control functions
 def play_spotify_music():
@@ -196,9 +220,9 @@ def hide_all():
 
 # Function to show all widgets
 def show_all():
-    weather_frame.place(relx=0.95, rely=0.05, anchor="ne")
-    todo_frame.place(relx=0.02, rely=0.05, anchor="nw")
-    reminder_frame.place(relx=0.02, rely=0.35, anchor="nw")
+    weather_frame.place(relx=0.95, rely=0.25, anchor="ne")
+    todo_frame.place(relx=0.02, rely=0.25, anchor="nw")
+    reminder_frame.place(relx=0.02, rely=0.6, anchor="nw")
     compliment_frame.place(relx=0.5, rely=0.95, anchor="s")
 
 def motion_detection():
@@ -207,6 +231,9 @@ def motion_detection():
     compliment_update_time = time.time()  # Track the time when the compliment was last updated
     compliment_duration = 30  # Compliment stays constant for 30 seconds
     current_compliment = ""
+
+    global frame
+    global res
 
     while True:
         ret, frame = cap.read()
@@ -310,7 +337,7 @@ root.bind("<Escape>", lambda e: root.destroy())  # Press 'Escape' to exit fullsc
 
 # Time Label
 time_label = tk.Label(root, text="", font=("Arial", 30), fg="white", bg="black")
-time_label.place(relx=0.5, rely=0.01, anchor="n")
+time_label.place(relx=0.5, rely=0.1, anchor="n")
 
 # Weather Frame
 weather_frame = tk.Frame(root, bg="black")
@@ -318,27 +345,27 @@ weather_icon_label = tk.Label(weather_frame, bg="black")
 weather_icon_label.pack()
 weather_label = tk.Label(weather_frame, text="Loading Weather...", font=("Arial", 12), fg="white", bg="black")
 weather_label.pack()
-weather_frame.place(relx=0.95, rely=0.05, anchor="ne")
+weather_frame.place(relx=0.95, rely=0.25, anchor="ne")
 
 # Todo Frame
 todo_frame = tk.Frame(root, bg="black")
 todo_title = tk.Label(todo_frame, text="TO DO", font=("Arial", 18, "bold"), fg="white", bg="black")
-todo_title.pack(anchor="w", padx=10)
-todo_label = tk.Label(todo_frame, text="", font=("Arial", 12), fg="white", bg="black")
-todo_label.pack(anchor="w", padx=10)
-todo_frame.place(relx=0.02, rely=0.05, anchor="nw")
+todo_title.pack(anchor="w", padx=10, pady=(0, 10))  
+todo_label = tk.Label(todo_frame, text="", font=("Arial", 12), fg="white", bg="black", justify="left")
+todo_label.pack(anchor="w", padx=10, pady=(0, 5))  # Add padding below this label
+todo_frame.place(relx=0.02, rely=0.25, anchor="nw")
 
 # Reminder Frame
 reminder_frame = tk.Frame(root, bg="black")
 reminder_title = tk.Label(reminder_frame, text="REMINDERS", font=("Arial", 18, "bold"), fg="white", bg="black")
-reminder_title.pack(anchor="w", padx=10)
-reminder_label = tk.Label(reminder_frame, text="", font=("Arial", 12), fg="white", bg="black")
-reminder_label.pack(anchor="w", padx=10)
-reminder_frame.place(relx=0.02, rely=0.35, anchor="nw")
+reminder_title.pack(anchor="w", padx=10, pady=(0, 10))
+reminder_label = tk.Label(reminder_frame, text="", font=("Arial", 12), fg="white", bg="black", justify="left")
+reminder_label.pack(anchor="w", padx=10, pady=(0,5))
+reminder_frame.place(relx=0.02, rely=0.6, anchor="nw")
 
 # Compliment Frame
 compliment_frame = tk.Frame(root, bg="black")
-compliment_label = tk.Label(compliment_frame, text="", font=("Arial", 12), fg="white", bg="black")
+compliment_label = tk.Label(compliment_frame, text="", font=("Arial", 12), fg="white", bg="black", justify="center")
 compliment_label.pack()
 compliment_frame.place(relx=0.5, rely=0.95, anchor="s")
 
