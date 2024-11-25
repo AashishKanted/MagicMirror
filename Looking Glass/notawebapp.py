@@ -14,34 +14,8 @@ import numpy as np
 frame = ""
 res = ""
 
-#<<<<<<< Updated upstream
 # Placeholder for your Google Sheets API key, Sheet ID, OpenWeatherMap API key and Spotify key
-SHEET_ID = '12RAcvir3adNOZikeLpR35oprVppqx9aKzujgmbxBCHo'
-API_KEY = 'AIzaSyCg1F3hUA8cri7HHtvLiOwsfCxvbp4czfQ'
-RANGE = 'Sheet2'
 
-WEATHER_API_KEY = "89c783ca6ca15a47906557128fbce8ec"
-CITY = "Goa"
-#=======
-# Placeholder for your Google Sheets API key, Sheet ID, OpenWeatherMap API key and Spotify api
-SHEET_ID = '12RAcvir3adNOZikeLpR35oprVppqx9aKzujgmbxBCHo'
-API_KEY = 'AIzaSyCg1F3hUA8cri7HHtvLiOwsfCxvbp4czfQ'
-RANGE = 'Sheet2'
-#>>>>>>> Stashed changes
-
-WEATHER_API_KEY = "89c783ca6ca15a47906557128fbce8ec"
-CITY = "Goa"
-
-
-SPOTIPY_CLIENT_ID = '4b4d7267b1bf47adae77bf7c4debd80a'
-SPOTIPY_CLIENT_SECRET = '199b93b8982f435b9e6d962255000088'
-SPOTIPY_REDIRECT_URI = 'http://localhost:8888/callback'
-SCOPE = 'user-read-playback-state,user-modify-playback-state'
-
-SPOTIPY_CLIENT_ID = '4b4d7267b1bf47adae77bf7c4debd80a'
-SPOTIPY_CLIENT_SECRET = '199b93b8982f435b9e6d962255000088'
-SPOTIPY_REDIRECT_URI = 'http://localhost:8888/callback'
-SCOPE = 'user-read-playback-state,user-modify-playback-state'
 # Initialize Spotify API
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID,
                                                client_secret=SPOTIPY_CLIENT_SECRET,
